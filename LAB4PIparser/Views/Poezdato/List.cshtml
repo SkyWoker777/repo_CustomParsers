@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LAB4PIparser.Entity.Train>
+
+@{
+    ViewBag.Title = "Poezdato - Trains";
+}
+
+<h2>List of Trains</h2>
+
+@*<h3>
+    Result
+    <c:if test="${when != null}">for ${when}</c:if>
+    :
+</h3>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TO)
+        </td>
+        <td><a href="@Html.DisplayFor(modelItem => item.Url)" />detail</td>
+    </tr>
+}
+
+</table>
